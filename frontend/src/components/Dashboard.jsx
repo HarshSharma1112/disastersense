@@ -110,7 +110,7 @@ const Dashboard = () => {
 
       // now log risk score to backend 
       try {
-        await axios.post('http://localhost:5000/api/risk/log', {
+        await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/risk/log`, {
           city: searchCity,
           riskScore: risk.score
         });
