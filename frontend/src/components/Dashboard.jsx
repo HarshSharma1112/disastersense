@@ -86,7 +86,7 @@ const Dashboard = () => {
       // FETCH NEWS RISK ANALYSIS (NEW!)
       let newsRiskData = null;
       try {
-        const newsRes = await axios.get(`http://localhost:5000/api/news/analyze?city=${searchCity}`, {
+        const newsRes = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/news/analyze?city=${searchCity}`, {
           timeout: 10000
         });
         if (newsRes.data.success) {
